@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/EventFinder/static/css/main.f855e6bc.css",
+    "main.js": "/EventFinder/static/js/main.8cbc74c9.js",
+    "static/js/787.0f140951.chunk.js": "/EventFinder/static/js/787.0f140951.chunk.js",
+    "service-worker.js": "/EventFinder/service-worker.js",
+    "static/media/logo.svg": "/EventFinder/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/EventFinder/index.html",
+    "main.f855e6bc.css.map": "/EventFinder/static/css/main.f855e6bc.css.map",
+    "main.8cbc74c9.js.map": "/EventFinder/static/js/main.8cbc74c9.js.map",
+    "787.0f140951.chunk.js.map": "/EventFinder/static/js/787.0f140951.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.8cbc74c9.js"
+  ]
+}
