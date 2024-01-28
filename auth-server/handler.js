@@ -2,8 +2,8 @@
 
 const { google } = require("googleapis");
 const calendar = google.calendar("v3");
-const SCOPES = ["https://www.googleapis.com/auth/calendar.events.public.readonly"];
-const { CLIENT_SECRET, CLIENT_ID, CALENDAR_ID } = process.env;
+const SCOPES = ["https://www.googleapis.com/auth/calendar.events.public.readonly"]; //SCOPES sets access levels i.e. read only
+const { CLIENT_SECRET, CLIENT_ID, CALENDAR_ID } = process.env; //means that it is referring the config.json file to keep API secrets hidden
 const redirect_uris = [
   "https://atmackenzie51.github.io/EventFinder/"
 ];
@@ -17,7 +17,7 @@ const oAuth2Client = new google.auth.OAuth2(
 module.exports.getAuthURL = async () => {
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: "offline",
-    scope: SCOPES,
+    scope: SCOPES, //access is stored in this variable
   });
 
   return {
