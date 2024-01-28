@@ -1,34 +1,15 @@
 service: auth-server
-# app and org for use with dashboard.serverless.com
-#app: your-app-name
-#org: your-org-name
-
-# You can pin your service to only deploy with a specific Serverless version
-# Check out our docs for more details
 frameworkVersion: "3"
 
 provider:
   name: aws
   runtime: nodejs18.x
-
-# you can overwrite defaults here
-#  stage: dev
   region: us-east-1
   timeout: 30
-
-# you can define service wide environment variables here
   environment:
-   CLIENT_ID: ${file(config.json): CLIENT_ID}
-   CLIENT_SECRET: ${file(config.json): CLIENT_SECRET}
-   CALENDAR_ID: ${file(config.json): CALENDAR_ID}
-
-# you can add packaging information here
-#package:
-#  patterns:
-#    - '!exclude-me.js'
-#    - '!exclude-me-dir/**'
-#    - include-me.js
-#    - include-me-dir/**
+    CLIENT_ID: ${file(config.json):CLIENT_ID}
+    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
+    CALENDAR_ID: ${file(config.json):CALENDAR_ID}
 
 functions:
   getAuthURL:
@@ -36,8 +17,4 @@ functions:
     events:
       - http:
           path: api/get-auth-url
-          method: get  
-
-#    Define function environment variables here
-#    environment:
-#      variable2: value2
+          method: get
