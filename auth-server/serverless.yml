@@ -44,7 +44,12 @@ environment:
 #    - include-me-dir/**
 
 functions:
-  
+  getAuthURL:
+    handler: handler.getAuthURL
+    events:
+      - http:
+          path: api/get-auth-url
+          method: get  
 
 #    Define function environment variables here
 #    environment:
