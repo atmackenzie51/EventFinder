@@ -72,3 +72,46 @@ module.exports.getAccessToken = async (event) => {
       };
     });
 };
+
+module.exports.getCalendarEvents = async (event) => {
+  //declares the access token
+  const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
+  //sets the access token for the credentials
+  oAuth2Client.setCredentials({ access_token });
+
+  return new Promise((resolve, reject) => {
+    /**
+     * Exchange authorization code for access token with a "callback" after the exchange,
+     * The callback is the arrow function with the results as parameters: "error" and "response"
+     */
+
+    oAuth2Client.getToken(code, (error, response) => {
+      if (error) {
+        return reject(error);
+      }
+      return resolve(response);
+    });
+  })
+    .then((results) => {
+      //respond with OAuth token
+      return {
+        statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+        },
+        body: JSON.stringify(results),
+      };
+    })
+    .catch((error) => {
+      //handle errors
+      return {
+        statusCode: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+        },
+        body: JSON.stringify(error),
+      };
+    });
+};
