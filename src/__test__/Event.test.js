@@ -33,4 +33,9 @@ describe('<Event /> component', () => {
     expect(EventComponent.queryByText('Show Details')).toBeInTheDocument();
   })
 
+  test('by default, event details should be hidden', () => {
+    const eventDetails = EventComponent.container.querySelector('event-details');
+    expect(eventDetails).not.toBeInTheDocument();
+  })
+
 });
