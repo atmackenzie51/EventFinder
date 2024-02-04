@@ -1,29 +1,34 @@
 import { render } from '@testing-library/react';
 import Event from '../components/Event';
-import mockData from '../mock-data';
+import { getEvents } from '../api';
 
 describe('<Event /> component', () => {
   let EventComponent;
-  beforeEach(() => {
-    // Pass the first event from mockData as a prop to the Event component
-    EventComponent = render(<Event event={mockData[0]} />);
+  let allEvents;
+
+  beforeEach(async () => {
+    allEvents = await getEvents();
+
+    // Pass the first event from allEvents as a prop to the Event component
+    EventComponent = render(<Event event={allEvents[0]} />);
   });
 
+  //Title is under the .summary of the event data
   test('shows event title', () => {
-    const eventTitle = mockData[0].summary
-    expect(EventComponent.queryByText(eventTitle)).toBeInTheDocument();
+    expect(EventComponent.queryByText(allEvents[0].summary)).toBeInTheDocument();
   });
 
+  //start time is under the .created of the event data
   test('shows event start time', () => {
-    const eventTime = mockData[0].created
-    expect(EventComponent.queryByText(eventTime)).toBeInTheDocument();
+    expect(EventComponent.queryByText(allEvents[0].created)).toBeInTheDocument();
   });
 
+  //start time is under the .location of the event data
   test('shows event location', () => {
-    const eventLocation = mockData[0].location
-    expect(EventComponent.queryByText(eventLocation)).toBeInTheDocument();
+    expect(EventComponent.queryByText(allEvents[0].location)).toBeInTheDocument();
   });
 
+  //make sure to watch capitalization for test to work
   test('renders event details button with the title "show details"', () => {
     expect(EventComponent.queryByText('Show Details')).toBeInTheDocument();
   })
