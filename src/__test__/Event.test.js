@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import Event from '../components/Event';
 import { getEvents } from '../api';
+import userEvent from '@testing-library/user-event';
 
 describe('<Event /> component', () => {
   let EventComponent;
@@ -36,6 +37,15 @@ describe('<Event /> component', () => {
   test('by default, event details should be hidden', () => {
     const eventDetails = EventComponent.container.querySelector('event-details');
     expect(eventDetails).not.toBeInTheDocument();
+  })
+
+  test('shows details when show details button is clicked by the user', async () => {
+    const user = userEvent.setup();
+    const button = EventComponent.queryByRole('button');
+    await user.click(button)
+    const eventDetails = EventComponent.container.querySelector('.event-details');
+    expect(eventDetails).toBeInTheDocument();
+
   })
 
 });
