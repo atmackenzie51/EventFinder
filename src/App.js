@@ -8,25 +8,30 @@ import { getEvents, extractLocations } from './api';
 
 
 const App = () => {
+  //these are the default states for the given parameters
   const [events, setEvents] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(32);
   const [allLocations, setAllLocations] = useState([]);
+  const [currentCity, setCurrentCity] = useState("See all cities");
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [currentCity]);
 
 
   const fetchData = async () => {
     const allEvents = await getEvents();
-    setEvents(allEvents.slice(0, currentNOE));
+    const filteredEvents = currentCity === "See all cities" ?
+      allEvents :
+      allEvents.filter(event => event.location === currentCity)
+    setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
   }
 
 
   return (
     <div className="App">
-      <CitySearch allLocations={allLocations} />
+      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
       <EventList events={events} />
       <NumberOfEvents />
     </div>
