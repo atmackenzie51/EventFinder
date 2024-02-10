@@ -10,6 +10,7 @@ const NumberOfEvents = ({ event }) => {
 
   return (
     <div id='number-of-events'>
+      <label>Number of Events:</label>
       <input
         type='text'
         value={NOE}
