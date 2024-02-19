@@ -1,13 +1,14 @@
-import { render } from '@testing-library/react';
+import { render, within, waitFor } from '@testing-library/react';
 import NumberOfEvents from '../components/NumberOfEvents';
-import { getEvents } from '../api';
+import App from '../App';
+import { extractLocations, getEvents } from '../api';
 import userEvent from '@testing-library/user-event';
 
 
 describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsComponent;
   beforeEach(() => {
-    NumberOfEventsComponent = render(<NumberOfEvents />);
+    NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => { }} />);
   });
 
   test('element contains "textbox" role', () => {
@@ -27,6 +28,5 @@ describe('<NumberOfEvents /> component', () => {
     await user.type(eventTextBox, "{backspace}{backspace}10");
     expect(eventTextBox).toHaveValue('10');
   })
-
 
 })

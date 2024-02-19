@@ -1,4 +1,4 @@
-import { render, within } from '@testing-library/react';
+import { render, within, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { getEvents } from '../api';
 import App from '../App';
@@ -48,4 +48,22 @@ describe('<App /> integration', () => {
       expect(event.textContent).toContain('Berlin, Germany');
     });
   });
+
+  test('selected number of events by user are rendered', async () => {
+    const user = userEvent.setup();
+    const AppComponent = render(<App />);
+    const AppDOM = AppComponent.container.firstChild;
+
+    const NumOfEventsDOM = AppDOM.querySelector('#number-of-events');
+    const NumOfEventsTextBox = within(NumOfEventsDOM).queryByRole('textbox');
+
+    await userEvent.type(NumOfEventsTextBox, '{backspace}{backspace}10');
+
+    await waitFor(() => {
+      const EventListDOM = AppDOM.querySelector('#event-list');
+      const renderedEvents = within(EventListDOM).queryAllByRole('listitem');
+      expect(renderedEvents.length).toEqual(10);
+    });
+  });
+
 })
