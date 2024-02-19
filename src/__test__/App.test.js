@@ -49,7 +49,7 @@ describe('<App /> integration', () => {
     });
   });
 
-  test('selected number of events by user are rendered', async () => {
+  test('renders the number of events typed by user', async () => {
     const user = userEvent.setup();
     const AppComponent = render(<App />);
     const AppDOM = AppComponent.container.firstChild;
