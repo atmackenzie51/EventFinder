@@ -7,7 +7,11 @@ import App from '../App';
 describe('<CitySearch /> component', () => {
   let CitySearchComponent;
   beforeEach(() => {
-    CitySearchComponent = render(<CitySearch allLocations={[]} />);
+    CitySearchComponent = render(<CitySearch
+      allLocations={[]}
+      setCurrentCity={() => { }}
+      setInfoAlert={() => { }}
+    />);
   });
 
   test('renders text input', () => {
@@ -34,7 +38,10 @@ describe('<CitySearch /> component', () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
-    CitySearchComponent.rerender(<CitySearch allLocations={allLocations} />);
+    CitySearchComponent.rerender(<CitySearch
+      allLocations={[]}
+      setCurrentCity={() => { }}
+      setInfoAlert={() => { }} />);
 
     //user types in Berlin
     const cityTextBox = CitySearchComponent.queryByRole('textbox');
@@ -47,7 +54,9 @@ describe('<CitySearch /> component', () => {
 
     //get all <li> elements inside the suggestion list
     const suggestionListItems = CitySearchComponent.queryAllByRole('listitem');
+
     expect(suggestionListItems).toHaveLength(suggestions.length + 1);
+
     for (let i = 0; i < suggestions.length; i += 1) {
       expect(suggestionListItems[i].textContent).toBe(suggestions[i]);
     }
@@ -58,8 +67,9 @@ describe('<CitySearch /> component', () => {
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
     CitySearchComponent.rerender(<CitySearch
-      allLocations={allLocations}
+      allLocations={[]}
       setCurrentCity={() => { }}
+      setInfoAlert={() => { }}
     />);
 
     const cityTextBox = CitySearchComponent.queryByRole('textbox');
