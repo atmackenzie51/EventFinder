@@ -56,7 +56,7 @@ describe('<CitySearch /> component', () => {
 
     expect(suggestionListItems).toHaveLength(suggestions.length + 1);
 
-    for (let i = 0; i < suggestions.length; i++) {
+    for (let i = 0; i < suggestions.length; i += 1) {
       expect(suggestionListItems[i].textContent).toBe(suggestions[i]);
     }
   });
