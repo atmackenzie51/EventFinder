@@ -39,8 +39,7 @@ describe('<CitySearch /> component', () => {
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
     CitySearchComponent.rerender(<CitySearch
-      allLocations={[]}
-      setCurrentCity={() => { }}
+      allLocations={allLocations}
       setInfoAlert={() => { }} />);
 
     //user types in Berlin
@@ -57,7 +56,7 @@ describe('<CitySearch /> component', () => {
 
     expect(suggestionListItems).toHaveLength(suggestions.length + 1);
 
-    for (let i = 0; i < suggestions.length; i += 1) {
+    for (let i = 0; i < suggestions.length; i++) {
       expect(suggestionListItems[i].textContent).toBe(suggestions[i]);
     }
   });
