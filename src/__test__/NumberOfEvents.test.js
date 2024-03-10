@@ -8,7 +8,9 @@ import userEvent from '@testing-library/user-event';
 describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsComponent;
   beforeEach(() => {
-    NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => { }} />);
+    NumberOfEventsComponent = render(<NumberOfEvents
+      setCurrentNOE={() => { }}
+      setErrorAlert={() => { }} />);
   });
 
   test('element contains "textbox" role', () => {
