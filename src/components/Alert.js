@@ -57,5 +57,5 @@ class WarningAlert extends Alert {
 }
 
 export {
-  InfoAlert, ErrorAlert
+  InfoAlert, ErrorAlert, WarningAlert
 };
