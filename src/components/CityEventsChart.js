@@ -8,7 +8,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-const cityEventsChart = ({ allLocations, events }) => {
+const CityEventsChart = ({ allLocations, events }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -44,4 +44,4 @@ const cityEventsChart = ({ allLocations, events }) => {
   );
 }
 
-export default cityEventsChart;
+export default CityEventsChart;
