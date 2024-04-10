@@ -11,7 +11,7 @@ const EventGenresChart = ({ events }) => {
   //create array for “genres” (or event topics) that occur in the events
   const genres = ["React", "JavaScript", "Node", "jQuery", "Angular"];
   //create array for colors of the pie chart
-  const colors = ["#008000", "#00cc00", "#4dff4d", "#99ff99", "#e6ffe6"];
+  const colors = ["#FF0000", "#FFA500", "#008000", "#0000FF", "#800080"];
 
   //use useEffect with callback and call getData()
   useEffect(() => {
