@@ -5,7 +5,10 @@ test-driven development (TDD) technique. The application practiced test-driven d
 The application uses the Google Calendar API to fetch upcoming events from around the world. Two plots will populate showing the subject of the events in a Pie Chart and another will show number of events in the selected location. 
 
 # Link to the EventFinder Application
-https://atmackenzie51.github.io/EventFinder/ 
+https://atmackenzie51.github.io/EventFinder/
+
+# Screenshot of the Start Page
+![Screenshot](build/Achievement_4.png)
 
 # Using Serverless Functions in this Project
 The project will use serverless functions to authenticate users, do real-time processing to meet user behavior, provide recommendations to users, and scale depending on the user base. 
