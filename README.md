@@ -1,7 +1,8 @@
-# Project Description
+# EventFinder Application Project Description
 To build a serverless, progressive web application (PWA) with React using a
-test-driven development (TDD) technique. The application uses the Google
-Calendar API to fetch upcoming events.
+test-driven development (TDD) technique. The application practiced test-driven development by exploring Unit, Integration, User-Acceptance and End-to-End testing methodologies.  
+
+The application uses the Google Calendar API to fetch upcoming events from around the world. Two plots will populate showing the subject of the events in a Pie Chart and another will show number of events in the selected location. 
 
 # Using Serverless Functions in this Project
 The project will use serverless functions to authenticate users, do real-time processing to meet user behavior, provide recommendations to users, and scale depending on the user base. 
