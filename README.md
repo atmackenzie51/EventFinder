@@ -7,11 +7,11 @@ Calendar API to fetch upcoming events.
 The project will use serverless functions to authenticate users, do real-time processing to meet user behavior, provide recommendations to users, and scale depending on the user base. 
 
 # Project Features:
-| Feature | Feature Scenarios |
-|:-------:|:---------:|
-|Filter Events by City| #1: When user hasn't searched for a city, show upcoming events from all cities
-#2: User should see a list of suggestions when they search for a city
-#3: User can select a city from the suggestion list.|
+| Feature                 | Feature Scenarios                                                                    |
+|:-----------------------:|:------------------------------------------------------------------------------------:|
+|Filter Events by City   | #1: When user hasn't searched for a city, show upcoming events from all cities.     |
+                          | #2: User should see a list of suggestions when they search for a city.                  |
+                          | #3: User can select a city from the suggestion list. 
 
 # Feature 2: Show/Hide Event Details
 **Scenario 1**: An event element is collapsed by default.
