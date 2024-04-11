@@ -33,12 +33,12 @@ Each features' scenarios were broken down into User Stories and converted in Ghe
 **Scenario 2**: User can expand an event to see details.  
 **Scenario 3**: User can collapse an event to hide details.  
 
-## Feature 2 User Story:
+### Feature 2 User Story:
 As a user,
 I should be able to show and hide event details
 So that I can select which events I want further details for without seeing all of them.
 
-## Feature 2 Gherkin Syntax:
+### Feature 2 Gherkin Syntax:
 **Scenario 1**: Given the system is in its default state
 When the user views an event element
 Then the event element should be collapsed
