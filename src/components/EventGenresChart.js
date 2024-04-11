@@ -47,7 +47,7 @@ const EventGenresChart = ({ events }) => {
     index,
   }) => {
     const RADIAN = Math.PI / 180;
-    const radius = outerRadius;
+    const radius = outerRadius + 10;
     const x = cx + radius * Math.cos(-midAngle * RADIAN) * 1.07;
     const y = cy + radius * Math.sin(-midAngle * RADIAN) * 1.07;
     return percent ? (
