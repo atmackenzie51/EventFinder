@@ -17,12 +17,13 @@ There were a total of 6 features being implemented with this application:
 |   #5   | Add an App Shortcut to the Home Screen |
 |   #6   | Display Charts visualizing Event Details |
 
+<a name="feature-1"></a>
 
 ## Feature 1: Filter Events by City
 **Scenario 1**: An event element is collapsed by default.
 **Scenario 2**: User can expand an event to see details.
 **Scenario 3**: User can collapse an event to hide details.
-<a name="feature-1"></a>
+
 
 ## Feature 2: Show/Hide Event Details
 **Scenario 1**: An event element is collapsed by default.
