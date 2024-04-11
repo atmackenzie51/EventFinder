@@ -20,9 +20,9 @@ There were a total of 6 features being implemented with this application:
 <a name="feature-1"></a>
 
 ## Feature 1: Filter Events by City
-**Scenario 1**: An event element is collapsed by default.
-**Scenario 2**: User can expand an event to see details.
-**Scenario 3**: User can collapse an event to hide details.
+**Scenario 1**: When the user hasn't searched for a city, show upcoming events in all cities.  
+**Scenario 2**: User should see a list of suggestions when they search for a city.  
+**Scenario 3**: User can select a city from the suggestion list.  
 
 
 ## Feature 2: Show/Hide Event Details
